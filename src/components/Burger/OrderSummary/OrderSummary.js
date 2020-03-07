@@ -5,6 +5,7 @@ const OrderSummary =(props)=>{
     .map(igKey =>{
         return <li><span style={{textTransform:'capitalize'}}>{igKey}</span>:{props.ingredients[igKey]}</li>
     })
+
  return (
      <Aux>
          <h3>あなたのオーダー</h3>

@@ -8,10 +8,10 @@ const buildControl = props => (
       onClick={props.removed}
       disabled={props.disabled}
     >
-      -
+      削除
     </button>
     <button className={classes.More} onClick={props.added}>
-      +
+      追加
     </button>
   </div>
 );

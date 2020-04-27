@@ -15,7 +15,7 @@ class OrderSummary extends Component {
     return (
       <Aux>
         <h3>あなたのオーダー</h3>
-        <p>あなたの材料は以下の通りよ</p>
+
         <ul>{ingredientSummary}</ul>
         <p>
           <strong>会計の値段:{this.props.price}円</strong>

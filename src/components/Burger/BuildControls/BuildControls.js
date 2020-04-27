@@ -11,15 +11,15 @@ const controls = [
 const buildControls = props => (
   <div className={classes.BuildControls}>
     <p>
-      お会計: <strong>{props.price}円</strong>
+      お会計の値段: <strong>{props.price}円</strong>
     </p>
-    {controls.map(ctrl => (
+    {controls.map(w => (
       <BuildControl
-        key={ctrl.label}
-        label={ctrl.label}
-        added={() => props.ingredientAdded(ctrl.type)}
-        removed={() => props.ingredientRemove(ctrl.type)}
-        disabled={props.disabled[ctrl.type]}
+        key={w.label}
+        label={w.label}
+        added={() => props.ingredientAdded(w.type)}
+        removed={() => props.ingredientRemove(w.type)}
+        disabled={props.disabled[w.type]}
       />
     ))}
     <button

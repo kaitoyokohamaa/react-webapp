@@ -33,6 +33,7 @@ export const initIngredients = () => {
       .get("https://react-web-app-135d6.firebaseio.com/ingredients.json")
       .then(response => {
         dispatch(setIngredients(response.data));
+        alert("koko");
       })
       .catch(error => {
         dispatch(fetchIngredientsFailed(error));

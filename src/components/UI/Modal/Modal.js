@@ -18,9 +18,11 @@ class Modal extends Component {
   render() {
     return (
       <Aux>
+        {/* //pinkの背景にする */}
         <Backdrop show={this.props.show} clicked={this.props.modalClosed} />
         <div
           className={classes.Modal}
+          // ここは注文を押したらturueになってモーダルを表示する実装
           style={{
             transform: this.props.show
               ? "translateY(0)"

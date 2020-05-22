@@ -87,7 +87,7 @@ class ContactData extends Component {
             { value: "cheapest", displayValue: "Cheapest" }
           ]
         },
-        value: "",
+        value: "fatest",
         validation: {},
         valid: true
       }
@@ -95,7 +95,6 @@ class ContactData extends Component {
 
     formIsValid: false
   };
-
   orderHandler = event => {
     event.preventDefault();
 
@@ -110,8 +109,9 @@ class ContactData extends Component {
       price: this.props.price,
       orderData: formData
     };
-    alert("ここにまず入ってるのか？");
+
     this.props.onOrderBurger(order);
+    console.log(this.props.onOrderBurger);
   };
 
   checkValidity(value, rules) {

@@ -7,7 +7,7 @@ import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import { connect } from "react-redux";
-import * as BurgerBuilderAction from "../../store/actions/index";
+import * as actions from "../../store/actions/index";
 import axios from "../../axios-orders";
 class BurgerBuilder extends Component {
   // constructor(props){
@@ -46,6 +46,7 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
+    this.props.onInitPurchase();
     //ここでクエリーパラメーターをいじくってるということが判明した。
     const queryParams = [];
     for (let i in this.state.ingredients) {
@@ -135,11 +136,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingName =>
-      dispatch(BurgerBuilderAction.addIngredient(ingName)),
-    onIngredientRemoved: ingName =>
-      dispatch(BurgerBuilderAction.rmeoveIngredient(ingName)),
-    onInitIngredients: () => dispatch(BurgerBuilderAction.initIngredients())
+    onIngredientAdded: ingName => dispatch(actions.addIngredient(ingName)),
+    onIngredientRemoved: ingName => dispatch(actions.rmeoveIngredient(ingName)),
+    onInitIngredients: () => dispatch(actions.initIngredients()),
+    onInitPurchase: () => dispatch(actions.puchaseInit())
   };
 };
 
